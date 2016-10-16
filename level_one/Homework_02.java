@@ -1,5 +1,5 @@
 /**
-* author is Anton Avraamov
+* Created by Anton Avraamov
 */
 
 import java.util.*;
@@ -98,11 +98,7 @@ public static void main(String[] args){
     // Метод для задания 2.
     static void revBinArr(int[] name){
         for (int i=0; i<name.length; i++){
-            if (name[i] == 0){
-                name[i] = 1;
-            } else {
-                name[i] = 0;
-            }
+            name[i] = (name[i] == 0) ? 1 : 0;
         }
     }
     // Метод для задания 3.
