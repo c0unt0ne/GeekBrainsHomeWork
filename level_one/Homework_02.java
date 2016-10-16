@@ -42,10 +42,7 @@ public static void main(String[] args){
     int min;
     fillArr(minMaxArr, 100);
     printArr(minMaxArr);
-    max = maxValue(minMaxArr, max);
-    min = minValue(minMaxArr, max);
-
-    System.out.println("MAX: " + minMaxArr[max] + "  MIN: " + minMaxArr[min]);
+    System.out.println("MAX: " + maxValue(minMaxArr) + "  MIN: " + minValue(minMaxArr));
     separation();
 
     // Задание 6**.
@@ -104,7 +101,7 @@ public static void main(String[] args){
     // Метод для задания 3.
     static void plusThree(int[] name){
         for (int i=0, j=1; i<name.length; i++, j+=3){
-            name[i] = j;    
+            name[i] = j;
         }
     }
     // Метод для задания 4.
@@ -117,20 +114,18 @@ public static void main(String[] args){
     }
     // Методы для задания 5*
     // Метод для нахождения максимального элемента массива
-    static int maxValue(int[] name, int max){
-        for (int i=0; i<name.length; i++){
-            if (name[max] < name[i]){
-                max = i;
-            }
+    static int maxValue(int[] name){
+        int max = name[0];
+        for (int value : name) {
+            max = (value > max) ? value : max;
         }
     return max;
     }
     // Метод для нахождения минимального элемента массива
-    static int minValue(int[] name, int min){
-        for (int i=0; i<name.length; i++){
-            if (name[min] > name[i]){
-                min = i;
-            }
+    static int minValue(int[] name){
+        int min = name[0];
+        for (int value : name) {
+            min = (value < min) ? value : min;
         }
     return min;
     }
